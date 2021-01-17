@@ -4,16 +4,9 @@ def between_markers(text: str, begin: str, end: str) -> str:
     """
     # your code here
         
-    try:
-        start = text.index(begin) + len(begin)
-    except ValueError:
-        start = 0
-    try:
-        finish = text.index(end)
-    except ValueError:
-        finish = len(text)
-
-    return (text[start:finish])
+    start = text.find(begin) + 1
+    finish = text.find(end)
+    return text[start:finis
 
 
 if __name__ == '__main__':
