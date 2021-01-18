@@ -1,13 +1,22 @@
 def checkio(data):
-    if len(data) >= 10:
-        if any(char.isdigit() for char in data):
-            for i in data:
-                if i.islower():
-                    for i in data:
-                        if i.isupper():
-                            return True
+    
+    upper_flag = False
+    lower_flag = False
+    number_flag = False
+    
+    if len(data) < 10:
+        return False
+    else:
+        for character in data:
+            if character.isupper():
+                upper_flag = True
+            if character.islower():
+                lower_flag = True
+            if character.isdigit():
+                number_flag = True
+        
+        return upper_flag and lower_flag and number_flag
 
-    return False
 
 
 if __name__ == '__main__':
